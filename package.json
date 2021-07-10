@@ -10,6 +10,7 @@
   "dependencies": {
     "@headlessui/vue": "^1.3.0",
     "@heroicons/vue": "^1.0.2",
+    "@tailwindcss/forms": "^0.3.3",
     "core-js": "^3.6.5",
     "near-api-js": "^0.41.0",
     "vue": "^3.0.0"

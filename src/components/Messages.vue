@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded-lg bg-gray-200 overflow-hidden shadow divide-y divide-gray-200 sm:divide-y-0 sm:grid sm:grid-cols-2 sm:gap-px">
+  <div class="rounded-lg bg-gray-200 overflow-hidden shadow divide-y divide-gray-200 sm:divide-y-0 sm:grid sm:grid-cols-2 sm:gap-px md:grid-cols-3">
     <div v-for="(message, index) in messages" :key="index" :class="[index === 0 ? 'rounded-tl-lg rounded-tr-lg sm:rounded-tr-none' : '', index === 1 ? 'sm:rounded-tr-lg' : '', index === messages.length - 2 ? 'sm:rounded-bl-lg' : '', index === messages.length - 1 ? 'rounded-bl-lg rounded-br-lg sm:rounded-bl-none' : '', 'relative group bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500']">
       <div>
         <!-- <span class="rounded-lg inline-flex p-3 ring-4 ring-white">
@@ -16,8 +16,8 @@
         </h3>
         <p class="mt-2 text-sm text-gray-500">{{ message.text }}</p>
       </div>
-      <span v-if="message.premium" class="absolute text-lg top-6 right-6 text-red-500 group-hover:text-red-600" aria-hidden="true"> <BadgeCheckIcon /> Premium </span>
-      <span v-else class="absolute text-xs top-6 right-6 text-gray-300 group-hover:text-gray-400" aria-hidden="true"> <HeartIcon /> Love Attached </span>
+      <span v-if="message.premium" class="absolute prem-font-conf text-lg top-6 right-6 text-red-400 group-hover:text-red-600" aria-hidden="true"> <BadgeCheckIcon /> Premium </span>
+      <span v-else class="absolute heart-font-conf top-6 right-6 text-gray-300 group-hover:text-gray-400" aria-hidden="true"> <HeartIcon /> Love Attached </span>
     </div>
   </div>
 </template>
@@ -44,3 +44,12 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.heart-font-conf {
+  font-size: 7px;
+}
+.prem-font-conf {
+  font-size: 10px;
+}
+</style>
