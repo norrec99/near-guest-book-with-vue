@@ -9,6 +9,10 @@
             <img class="hidden lg:block h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg" alt="Workflow" />
           </div>
         </div>
+        <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+          <button v-if="accountId" @click="signIn" class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">Log out</button>
+          <button v-else @click="signIn" class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">Login with NEAR Wallet</button>
+        </div>
       </div>
     </div>
   </Disclosure>
@@ -17,12 +21,18 @@
 <script>
 import { Disclosure } from "@headlessui/vue";
 
+import { wallet, CONTRACT_ID } from "@/services/near.js";
 export default {
   components: {
     Disclosure
   },
   setup() {
-    return {};
+    const accountId = wallet.getAccountId();
+
+    return {
+      accountId,
+      signIn: () => wallet.requestSignIn(CONTRACT_ID)
+    };
   }
 };
 </script>

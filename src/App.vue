@@ -1,14 +1,22 @@
 <template>
   <BaseNavbar />
-  <h1>App</h1>
+  <Messages :messages="messages" />
 </template>
 
 <script>
 import BaseNavbar from "@/components/BaseNavbar";
+import Messages from "@/components/Messages";
+
+import { useMessages } from "@/composables/near.js";
+
 export default {
-  name: "App",
+  setup() {
+    const { messages, addMessage } = useMessages();
+    return { messages, addMessage };
+  },
   components: {
-    BaseNavbar
+    BaseNavbar,
+    Messages
   }
 };
 </script>
