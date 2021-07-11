@@ -1,18 +1,14 @@
 <template>
-  <div class="rounded-lg bg-gray-200 overflow-hidden shadow divide-y divide-gray-200 sm:divide-y-0 sm:grid sm:grid-cols-2 sm:gap-px md:grid-cols-3">
+  <div class="mb-10 mx-10 rounded-lg bg-gray-200 overflow-hidden shadow divide-y divide-gray-200 sm:divide-y-0 sm:grid sm:grid-cols-2 sm:gap-px md:grid-cols-3">
     <div v-for="(message, index) in messages" :key="index" :class="[index === 0 ? 'rounded-tl-lg rounded-tr-lg sm:rounded-tr-none' : '', index === 1 ? 'sm:rounded-tr-lg' : '', index === messages.length - 2 ? 'sm:rounded-bl-lg' : '', index === messages.length - 1 ? 'rounded-bl-lg rounded-br-lg sm:rounded-bl-none' : '', 'relative group bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500']">
-      <div>
-        <!-- <span class="rounded-lg inline-flex p-3 ring-4 ring-white">
-          <BadgeCheckIcon />
-        </span> -->
-      </div>
+      <div></div>
       <div class="mt-8">
-        <h3 class="text-lg font-medium">
-          <a href="#" class="focus:outline-none">
+        <h3 class="text-md font-medium">
+          <div class="focus:outline-none">
             <!-- Extend touch target to entire panel -->
             <span class="absolute inset-0" aria-hidden="true" />
             {{ message.sender }}
-          </a>
+          </div>
         </h3>
         <p class="mt-2 text-sm text-gray-500">{{ message.text }}</p>
       </div>
