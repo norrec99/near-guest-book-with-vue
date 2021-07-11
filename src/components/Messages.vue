@@ -12,7 +12,7 @@
         </h3>
         <p class="mt-2 text-sm text-gray-500">{{ message.text }}</p>
       </div>
-      <span v-if="message.premium" class="absolute prem-font-conf text-lg top-6 right-6 text-red-400 group-hover:text-red-600" aria-hidden="true"> <BadgeCheckIcon /> Premium </span>
+      <span v-if="message.premium" class="absolute prem-font-conf text-lg top-6 right-6 near-orange group-hover:text-red-600" aria-hidden="true"> <BadgeCheckIcon /> Premium </span>
       <span v-else class="absolute heart-font-conf top-6 right-6 text-gray-300 group-hover:text-gray-400" aria-hidden="true"> <HeartIcon /> Love Attached </span>
     </div>
   </div>
@@ -47,5 +47,8 @@ export default {
 }
 .prem-font-conf {
   font-size: 10px;
+}
+.near-orange {
+  color: #ff585d;
 }
 </style>

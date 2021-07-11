@@ -18,7 +18,7 @@
                   <div class="mt-1">
                     <input v-model="donation" type="number" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="0" />
                   </div>
-                  <button @click="onSubmit" type="button" class="mt-4 inline-flex items-center px-3 py-2 border border-transparent shadow-sm text-sm leading-4 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  <button @click="onSubmit" type="button" class="mt-4 inline-flex items-center px-3 py-2 border border-transparent shadow-sm text-sm leading-4 font-medium rounded-md text-white near-orange focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                     Send message
                     <MailIcon class="ml-2 -mr-0.5 h-4 w-4" aria-hidden="true" />
                   </button>
@@ -68,3 +68,11 @@ export default {
   }
 };
 </script>
+<style scoped>
+.near-orange {
+  background-color: #ff585d;
+}
+.near-orange:hover {
+  font-weight: 700;
+}
+</style>
