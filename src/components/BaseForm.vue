@@ -55,9 +55,11 @@ export default {
   },
   setup(props) {
     const message = ref("");
-    const donation = ref(0);
+    const donation = ref("0");
     const onSubmit = () => {
       props.addMessage({ text: message.value, donation: donation.value });
+      console.log(message.value);
+      console.log(donation.value);
     };
     return {
       message,

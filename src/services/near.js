@@ -19,7 +19,7 @@ export const getMessages = () => {
 };
 
 // a service to add a message to the blockchain
-export const addMessage = ({ text, donation = 0 }) => {
+export const addMessage = ({ text, donation = "0" }) => {
   return wallet.account().functionCall({
     contractId: CONTRACT_ID,
     methodName: "addMessage",
